@@ -1,15 +1,18 @@
 body{
     margin: 0px;
+    background-color: rgba(237, 212, 237, 0.66);
 }
 
 .header{
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 25px;
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_desktop {
+    background-image: url(../img/header_empty_desktop.png);
+    width: 960px;
+    height: 348px;
 }
 
 .menu{
@@ -24,14 +27,85 @@ body{
 .link{
     text-decoration: none;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-.content{
+.content_desktop{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .box{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.box1{
     background-color: aquamarine;
+}
+
+.box2{
+    background-color: gold;
+}
+
+.box3{
+    background-color: firebrick;
+}
+
+
+.header_iphone, .header_ipad, .content_other{
+    display: none;
+}
+
+/* iPhone 6 */
+@media only screen and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .header_iphone{
+        display: block;
+        background-image: url(../img/header_empty_iphone.png);
+        width: 375px;
+        height: 136px;
+    }
+
+    .content_other{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .header_desktop, .content_desktop{
+        display: none;
+    }
+
+}
+
+/* iPad */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .header_iphone{
+        display: block;
+        background-image: url(../img/header_empty_ipad.png);
+        width: 1024px;
+        height: 371px;
+    }
+
+    .content_other{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header_desktop, .content_desktop{
+        display: none;
+    }
+
 }
